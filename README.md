@@ -1,6 +1,6 @@
 # FUN-O
 
-This is an exploration project to experiment with ideas about using SWI-Prolog to analyse phonology.
+This is an exploration project to experiment with ideas about using SWI-Prolog with phonology.
 
 ## Current functionalities
 

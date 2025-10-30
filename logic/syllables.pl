@@ -1,7 +1,7 @@
 % Fonctions about syllables.
 
 % Import modules.
-:- [tools].
+:- [utils].
 
 % Import phonemes.
 :- [phonemes].
@@ -21,4 +21,5 @@ split_syllable(Attack, Nucleus, Coda, Syl) :-
 find_nucleus(Syl, Nucleus) :-
         nucleus(Nucleus),
         sublist(Nucleus, Syl).
+
 

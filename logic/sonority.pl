@@ -1,10 +1,13 @@
 % A simple phonological systeme to test the implementation of the sonority rule.
 
+% Make this file a module.
+% :- module(sonority, [respect/1]).
+
 % Initialisation.
 :- [init].
 
 % Import modules.
-:- [syllables, tools].
+:- [syllables, utils].
 
 % Import phonemes.
 :- [phonemes].
@@ -26,7 +29,7 @@ respect(Syl) :-
         split_syllable(Attack, Nucleus, Coda, Syl),
         find_traits(Attack, TAttack),
         find_traits(Coda, TCoda),
-        attack_sonority(TAttack),
+        attack_sonority(TAttack), !,
         coda_sonority(TCoda).
 
 

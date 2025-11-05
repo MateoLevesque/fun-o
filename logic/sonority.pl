@@ -4,13 +4,13 @@
 % :- module(sonority, [respect/1]).
 
 % Initialisation.
-:- [init].
+:- ['../utils/init.pl'].
 
 % Import modules.
-:- [syllables, utils].
+:- ['syllables.pl','../utils/utils.pl'].
 
 % Import phonemes.
-:- [phonemes].
+:- ['../dict/phonemes.pl'].
 
 % So the sonority principle is as follow : vowel > glide > liquid > nasal > obstruent (fricative (voiced > unvoived) > plosive (voiced > unvoived))
 

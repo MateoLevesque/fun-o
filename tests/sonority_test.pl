@@ -1,6 +1,6 @@
 % Tests for the sonority.pl file.
 
-:- use_module('../sonority').
+:- use_module('../logic/sonority.pl').
 
 :- begin_tests(sonority_tests).
 

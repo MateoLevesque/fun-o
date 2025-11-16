@@ -1,47 +1,47 @@
 % Tests for the sonority.pl file.
 
-:- use_module('../logic/sonority.pl').
+:- use_module('../logic/sonority').
 
 :- begin_tests(sonority_tests).
 
         test(cv, [condition(true), fail]) :-
-          respect("lœ").
+           sonority("lœ").
 
         test(vc, [condition(true), fail]) :-
-          respect("yn").
+           sonority("yn").
 
         test(cvc, [condition(true), fail]) :-
-          respect("taʃ").
+           sonority("taʃ").
 
         test(ccv, [condition(true), fail]) :-
-          respect("tʁo").
+           sonority("tʁo").
 
         test(vcc, [condition(true), fail]) :-
-          respect("uʁs").
+           sonority("uʁs").
 
         test(ccvc, [condition(true), fail]) :-
-          respect("klɔʃ").
+           sonority("klɔʃ").
 
         test(cvcc, [condition(true), fail]) :-
-          respect("pɔʁt").
+           sonority("pɔʁt").
 
         test(ccvcc, [condition(true), fail]) :-
-          respect("klɛʁk").
+           sonority("klɛʁk").
 
         test(v, [condition(true), fail]) :-
-          respect("ɑ").
+           sonority("ɑ").
 
         test(vv, [condition(true), fail]) :-
-          respect("ai").
+           sonority("ai").
 
         test(ccvvc, [condition(true), fail]) :-
-          respect("tsaaʁmt").
+           sonority("tsaaʁmt").
 
         test(no_more_than_3_vowels, [fail, condition(true)]) :-
-          respect("tooos").
+           sonority("tooos").
 
         test(dont_hold_if_sonority_not_respected, [fail, condition(true)]) :-
-          respect("tʁubl").
+           sonority("tʁubl").
 
 :- end_tests(sonority_tests).
 

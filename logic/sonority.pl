@@ -4,13 +4,13 @@
 % :- module(sonority, [respect/1]).
 
 % Initialisation.
-:- ['../utils/init.pl'].
+:- ['../utils/init'].
 
 % Import modules.
-:- ['syllables.pl','../utils/utils.pl'].
+:- ['syllables','../utils/utils'].
 
 % Import phonemes.
-:- ['../dict/phonemes.pl'].
+:- ['../dict/phonemes'].
 
 % So the sonority principle is as follow : vowel > glide > liquid > nasal > obstruent (fricative (voiced > unvoived) > plosive (voiced > unvoived))
 
@@ -22,9 +22,9 @@ principle(glide, 5).
 principle(vowel, 6).
 
 
-respect(Syl) :-
+sonority(Syl) :-
         nucleus(Syl).
-respect(Syl) :-
+sonority(Syl) :-
         find_nucleus(Syl, Nucleus),
         split_syllable(Attack, Nucleus, Coda, Syl),
         find_traits(Attack, TAttack),
@@ -59,5 +59,4 @@ coda_order([T1, T2|R]) :-
         dif(T1, T2),
         T1 >= T2,
         coda_order([T2 | R]).
-
 

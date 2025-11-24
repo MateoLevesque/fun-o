@@ -4,5 +4,6 @@
 
 :- ['logic/sonority'].
 
+:- ['logic/syllables'].
 
-
+:- ['logic/transcription'].

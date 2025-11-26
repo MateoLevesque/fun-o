@@ -1,47 +1,27 @@
-% Transcripteur automatique avec Prolog.
+% Graphème-Phonème transcription avec Prolog.
 
 :- ['../utils/init'].
 
-% :- ['../utils/re'].
+:- ['../dict/phonemes'].
 
-% :- ['../dict/phonemes'].
+ipa(Input) :-
+  replace(Input, Result),
+  write(Result).
 
-ipa_list([],[]).
-ipa_list([Input|SuiteInput], [Result|SuiteResult]) :-
-  ipa(Input, Result),
-  ipa_list(SuiteInput, SuiteResult).
+replace([o,u|S1], [u|S2]) :-
+  replace(S1,S2).
 
-ipa(Input, Result) :-
-  phrase(replace(Chars), Input),
-  string_chars(Result, Chars), !.
+replace([V1,s,V2|S1], [V1,z,V2|S2]) :-
+  phoneme(V1,vowel),
+  phoneme(V2, vowel),
+  replace(S1,S2).
 
-replace([]) --> [].
+replace([o,n|S1], [P|S2]) :-
+  phoneme(P,_,onasal),
+  replace(S1,S2).
 
-%replace([c,h|Suite]) -->
-%  ['a'],
-%  ['o','p'],
-%  !,
-%  replace(Suite).
-
-replace([k|Suite]) -->
-  ['c','h'], end,
-  !,
-  replace(Suite).
-
-replace([C|Suite]) -->
-  [C],
-  replace(Suite).
-
-
-% ------------------------ Positions -------------------------
-
-beginning --> {true}.
-
-end --> [], {true}.
-end --> [X], {member(X, ['.','!','?',','])}.
-
-after(X) --> [X].
-
-before(X) --> [X].
+replace([], []).
+replace([L|S1], [L|S2]) :-
+  replace(S1, S2).
 
 

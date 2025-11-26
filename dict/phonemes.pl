@@ -1,6 +1,7 @@
 % A list of all basic phoneme in french.
 % phoneme/2   phoneme(Phoneme, Trait)
 % Vowels
+
 phoneme(i, vowel).
 phoneme(y, vowel).
 phoneme(u, vowel).
@@ -41,6 +42,11 @@ phoneme(k, plosive).
 phoneme(ɡ, plosive).
 phoneme(ʁ, fricative).
 phoneme(w, ɡlide).
+
+phoneme('ẽ', vowel, enasal).
+phoneme('ɔ̃', vowel, onasal).
+phoneme('œ̃', vowel, oenasal).
+phoneme('ɑ̃', vowel, anasal).
 
 % Fonctions related to phonemes.
 find_traits([], []).

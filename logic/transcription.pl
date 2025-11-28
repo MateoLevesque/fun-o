@@ -2,26 +2,15 @@
 
 :- ['../utils/init'].
 
-:- ['../dict/phonemes'].
+:- ['../dict/phonemes_dcg'].
 
-ipa(Input) :-
-  replace(Input, Result),
-  write(Result).
+ipa(Input, Output) :-
+  phrase(replace(Output), Input), !.
 
-replace([o,u|S1], [u|S2]) :-
-  replace(S1,S2).
-
-replace([V1,s,V2|S1], [V1,z,V2|S2]) :-
-  phoneme(V1,vowel),
-  phoneme(V2, vowel),
-  replace(S1,S2).
-
-replace([o,n|S1], [P|S2]) :-
-  phoneme(P,_,onasal),
-  replace(S1,S2).
-
-replace([], []).
-replace([L|S1], [L|S2]) :-
-  replace(S1, S2).
+%replace([k|Suite]) --> [c,h], !, replace(Suite).
+% affrication 
+replace([TD,SZ,IU|Suite]) --> [TD,IU], {phrase(phoneme(syll,haut,avant,_,_), [IU]), phrase(phoneme(cons, plosive, alv, cor, Voix), [TD]), phrase(phoneme(cons, fricative, alv, cor, Voix), [SZ])}, !, replace(Suite).
+replace([G|Suite]) --> [G], replace(Suite).
+replace([]) --> [].
 
 

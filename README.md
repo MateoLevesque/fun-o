@@ -43,23 +43,15 @@ The actual model we have for syllable parsing is quite simple. It seems to work 
 # Functionalities to implement in the future
 Just to clarify, functionalities that are listed below might not be added in the future. There implementation will depend on whether I find them useful enough.
 
-## Grapheme to Phoneme conversion (In progress)
-
-## Mora analysis
-
-## Stress classification
-
-## Metrical feet analysis.
-
-## Phono-morphology change prediction.
-
-## Calculate the odds that a certain phoneme is presided or followed by another. ("Latent Phonological analysis")
-
-## OT implementation possibilities.
-
-## SPE rules creator. (takes an underlying form and a context and automatically figures out the surface form)
-
-## And others...
+- Grapheme to Phoneme conversion (In progress)
+- Mora analysis
+- Stress classification
+- Metrical feet analysis.
+- Phono-morphology change prediction.
+- Calculate the odds that a certain phoneme is presided or followed by another. ("Latent Phonological analysis")
+- OT implementation possibilities.
+- SPE rules creator. (takes an underlying form and a context and automatically figures out the surface form)
+- And others...
 
 # Information on the project
 Below, you will find some useful information about the project.

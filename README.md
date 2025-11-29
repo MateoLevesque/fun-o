@@ -21,7 +21,7 @@ git clone https://github.com/MateoLevesque/fun-o.git
 # Usage
 Once you have the files in your project, then you will need to paste this line near the top of the `.pl` files where the module is needed:
 ```{prolog}
-:- ['fun-o/fun-o']
+:- ['fun-o/fun-o'].
 ```
 
 You can see in the next section most of the functionalities and how they work.
@@ -32,7 +32,7 @@ To have a more complete understanding of the different terms and rules see the c
 Here you can find a list of functionality and terms that are used in the module:
 
 ## Phoneme Dictionary
-For now there is only one dictionary. The one implemented right now is quite simple and only has 2 arguments. The term is `phoneme/2`. For example: `phoneme(i, vowel).` this is quite simple but useful in some cases. Now I'm working on a second one that aims to replace the actual one. This new dictionary will work with Definite Clause Grammars (DCG) and will be even more useful. 
+There are 2 phoneme dictionary. The first one is quite simple and only has 2 arguments. The term is `phoneme/2`. For example: `phoneme(i, vowel).` this is quite simple but useful in some cases. The second one uses Definite clauses grammar (DCG) and as more arguments. To use it properly see the file in `dicts/phoneme_dcg.pl`.
 
 ## Sonority analysis
 You can work with the sonority principle with the module `sonority.pl`.

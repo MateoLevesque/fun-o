@@ -1,5 +1,5 @@
 # FUN-O
-*fun-o* is a collection of modules for phonologists using SWI-Prolog. The main goal with these modules is to make the process of phonological analysis easier ,faster and a bit more understandable.
+*fun-o* is a collection of modules for phonologists using SWI-Prolog. The main goal with these modules is to make the process of phonological analysis with Prolog easier, faster and a bit more understandable.
 
 # Supported languages
 For now the only supported language is French. There will be more implemented in the futur like German, Norwegian or Spanish.

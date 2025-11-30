@@ -8,8 +8,9 @@
 ipa(Input, Output) :-
   phrase(replace(Output), Input), !.
 
-segmentation([G|S1], ['.',G|S2]) :-
-  gsegment(G), % from grapheme_segment.pl
+segmentation([], ['-']).
+segmentation([G|S1], ['-',G|S2]) :- % from grapheme_segment.pl
+  gsegment(G),
   segmentation(S1, S2).
 
 % TODO: add beginning and ending markers.
